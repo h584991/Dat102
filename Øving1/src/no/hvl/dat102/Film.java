@@ -1,7 +1,8 @@
 package no.hvl.dat102;
 
 public class Film {
-
+	
+	//Oppretter objektvariabler
 	private int filmNummer;
 	private String produsentNavn;
 	private String tittel;
@@ -9,6 +10,7 @@ public class Film {
 	private Sjanger sjanger;
 	private String filmselskap;
 	
+	//konstruktør uten parameter
 	public Film() {
 		this.filmNummer = 0;
 		this.produsentNavn = null;
@@ -18,6 +20,7 @@ public class Film {
 		this.filmselskap = null;
 	}
 	
+	//konstruktør med parameter
 	public Film(int filmNummer, String produsentNavn, String tittel, int lanseringsår, 
 					Sjanger sjanger, String filmselskap) {	
 		this.filmNummer = filmNummer;
@@ -28,6 +31,7 @@ public class Film {
 		this.filmselskap = filmselskap;
 	}
 	
+	//get metoder for objektvariabel verdier
 	public int getFilmNummer() {
 		return filmNummer;
 	}

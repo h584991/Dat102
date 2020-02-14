@@ -2,43 +2,62 @@ package no.hvl.dat102.adt;
 
 import no.hvl.dat102.Film;
 import no.hvl.dat102.Sjanger;
-
+/**
+ * Dette er en interface med metoder som kreves av filmarkivet for at resten av filmarkivklienten 
+ * skal kunne fungere, uavhengig av hvordan arkivet i seg selv er bygget.
+ * 
+ * @author jmengevik
+ *
+ */
 public interface FILMarkivADT {
 	
 	
 	
-	/*
-	 * Returnerer en tabell med filmer.
+	/**
+	 * Skal returnere alle Film objektene i arkivet
+	 * @return
 	 */
 	Film[] hentFilmTabell();
 	
-	/*
-	 * Legger til en ny film i arkivet.
+	/**
+	 * Skal legge til parameteren nyFilm til arkivet
+	 * @param nyFilm
 	 */
 	void leggTilFilm(Film nyFilm);
 	
-	/*
-	 * Sletter en film hvis den finnes
+	/**
+	 * skal slette filmen i arkivet med filmnummeret angitt av parametere og returnere true om den bel slettet
+	 * eller false om det ikke ble slettet noe
+	 * @param filmNr
+	 * @return
 	 */
 	boolean slettFilm(int filmNr);
 	
-	/*
-	 * Søker og henter filmer med en gitt delstreng.
+	/**
+	 * Skal returnere alle Film objekter i arkivet som har en tittel som inneholder delstrengen
+	 * angitt som parameter.
+	 * @param delStreng
+	 * @return
 	 */
 	Film[] søkTittel(String delStreng);
 	
-	/*
-	 * Søker og henter produsenter med en gitt delstreng.
+	/**
+	 * Skal returnere alle Film objekter i arkivet som har en produsent som inneholder delstrengen
+	 * angitt som parameter
+	 * @param delStreng
+	 * @return
 	 */
 	Film[] søkProdusent(String delStreng);
 	
-	/*
-	 * Returnerer antall filmer innenfor en gitt sjanger.
+	/**
+	 * Skal returnere antallet filmer i arkivet som har sjengeren spesifisert som parameter.
+	 * @param sjanger
 	 */
 	int antallSjanger(Sjanger sjanger);
 	
-	/*
-	 * Returnerer antallet filmer i arkivet.
+	/**
+	 * Skal returnere antallet filmer i arkivet.
+	 * @return
 	 */
 	int antall();
 	

@@ -26,9 +26,22 @@ public class Meny {
 			switch(str) {
 			
 			case "add":
-				
-				Film nyFilm = tekstgr.lesFilm();
-				filma.leggTilFilm(nyFilm);
+				boolean duplikat = true;
+				Film nyFilm = null;
+				while(duplikat) {
+					duplikat = false;
+					nyFilm = tekstgr.lesFilm();
+					for (Film f : filma.hentFilmTabell()) {
+						if(f.getFilmNummer() == nyFilm.getFilmNummer()) {
+							duplikat = true;
+							System.out.println("Dette filmnummeret er brukt.");
+						}
+					}
+					
+				}
+				if(nyFilm != null) {
+					filma.leggTilFilm(nyFilm);
+				}
 				break;
 				
 			case "tittel":
