@@ -1,0 +1,22 @@
+package no.hvl.dat102.nyImplementasjon;
+
+public enum Sjanger {
+	ACTION, DRAMA, HISTORY, SCIFI;
+	
+/*
+ * Konstrukt�ren er gitt implisitt og er private
+	
+*/
+
+	public static Sjanger finnSjanger(String navn) {
+		Sjanger sjang = null;
+		for (Sjanger sj : Sjanger.values()) {
+			if (sj.toString().equals(navn.toUpperCase())) {
+				sjang = sj;
+				break;
+			}
+		}
+		return sjang;
+	}// metode
+
+}// class
